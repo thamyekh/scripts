@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# replace nano with the editor of your choice (eg. vim, sublime, etc.)
+SCRIPT_EDIT="vim"
+SCRIPT_PATH="$HOME/scripts"
+SCRIPT_FILE="$SCRIPT_PATH/$1"
+
+if [ -f $SCRIPT_FILE ]; then
+	$SCRIPT_EDIT $SCRIPT_FILE
+else
+	echo '#!/bin/bash' > $SCRIPT_FILE
+	chmod +x $SCRIPT_FILE
+	$SCRIPT_EDIT $SCRIPT_FILE
+fi
+

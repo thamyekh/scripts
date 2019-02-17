@@ -1,0 +1,19 @@
+#!/bin/bash
+
+XRESOURCES="$HOME/.Xresources"
+COMPTONCONF="$HOME/.config/compton.conf"
+
+if [ -a $XRESOURCES ]; then
+	cp $XRESOURCES $HOME/rice/.Xresources
+	echo "Backed up $XRESOURCES to $HOME/rice/"
+else
+	echo "$XRESOURCES not found."
+fi
+
+if [ -a $COMPTONCONF ]; then
+	cp $COMPTONCONF $HOME/rice/compton.conf
+	echo "Backed up $COMPTONCONF to $HOME/rice/"
+else
+	echo "$COMPTONCONF not found."
+fi
+
